@@ -1,0 +1,31 @@
+{
+  "name": "blockchain-minesweeper",
+  "version": "1.0.0",
+  "description": "A cute blockchain-based minesweeper game with smart contracts and React frontend",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "test": "cd contracts && npx hardhat test",
+    "compile": "cd contracts && npx hardhat compile",
+    "deploy:sepolia": "cd contracts && npx hardhat run scripts/deploy.js --network sepolia",
+    "deploy:frontend": "node scripts/deploy-frontend.js",
+    "node": "cd contracts && npx hardhat node",
+    "install:all": "npm install && cd contracts && npm install && cd ../frontend && npm install",
+    "start": "concurrently \"npm run node\" \"npm run dev\"",
+    "build:all": "npm run compile && npm run build"
+  },
+  "keywords": [
+    "blockchain",
+    "minesweeper",
+    "solidity",
+    "react",
+    "web3",
+    "game"
+  ],
+  "author": "The Augster",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
