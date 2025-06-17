@@ -4,13 +4,14 @@ import WalletConnect from './components/WalletConnect';
 import GameSettings from './components/GameSettings';
 import GameBoard from './components/GameBoard';
 import PlayerStats from './components/PlayerStats';
+import TestMode from './components/TestMode';
 import useGameState from './hooks/useGameState';
 import './App.css';
 
 function App() {
   const [isConnected, setIsConnected] = useState(false);
   const [currentAccount, setCurrentAccount] = useState('');
-  const [currentView, setCurrentView] = useState('game'); // 'game' | 'stats'
+  const [currentView, setCurrentView] = useState('game'); // 'game' | 'stats' | 'test'
 
   // 使用游戏状态管理 Hook
   const {
@@ -97,6 +98,16 @@ function App() {
               >
                 统计
               </button>
+              <button
+                onClick={() => setCurrentView('test')}
+                className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all ${
+                  currentView === 'test'
+                    ? 'bg-purple-100 text-purple-700'
+                    : 'text-gray-600 hover:text-gray-800 hover:bg-gray-100'
+                }`}
+              >
+                🧪 测试
+              </button>
             </div>
           </div>
         </div>
@@ -131,7 +142,7 @@ function App() {
           </div>
 
           {/* 主要内容区域 */}
-          <div className="lg:col-span-2">
+          <div className={currentView === 'test' ? 'lg:col-span-3' : 'lg:col-span-2'}>
             {currentView === 'game' ? (
               <GameBoard
                 gameInfo={gameInfo}
@@ -144,12 +155,14 @@ function App() {
                 isGameInProgress={isGameInProgress}
                 getGameDuration={getGameDuration}
               />
-            ) : (
+            ) : currentView === 'stats' ? (
               <PlayerStats
                 playerStats={playerStats}
                 gameInfo={gameInfo}
                 isConnected={isConnected}
               />
+            ) : (
+              <TestMode />
             )}
           </div>
         </div>

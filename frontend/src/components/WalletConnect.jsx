@@ -132,22 +132,22 @@ const WalletConnect = ({ onConnectionChange }) => {
 
   if (!isConnected) {
     return (
-      <div className="card-cute">
+      <div className="card-cute" data-testid="wallet-connect">
         <div className="text-center">
           <div className="mb-4">
             <Wallet className="w-16 h-16 mx-auto text-pink-400 animate-bounce-soft" />
           </div>
-          
+
           <h3 className="text-xl font-bold text-gray-800 mb-2">
             连接钱包
           </h3>
-          
+
           <p className="text-gray-600 mb-6">
             连接您的 MetaMask 钱包开始游戏
           </p>
 
           {error && (
-            <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-2xl flex items-center gap-2 text-red-700">
+            <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-2xl flex items-center gap-2 text-red-700" data-testid="error-message">
               <AlertCircle className="w-4 h-4 flex-shrink-0" />
               <span className="text-sm">{error}</span>
             </div>
@@ -157,10 +157,11 @@ const WalletConnect = ({ onConnectionChange }) => {
             onClick={connectWallet}
             disabled={isConnecting}
             className="btn-pink w-full disabled:opacity-50 disabled:cursor-not-allowed"
+            data-testid="connect-wallet-btn"
           >
             {isConnecting ? (
               <div className="flex items-center justify-center gap-2">
-                <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" data-testid="loading-spinner"></div>
                 连接中...
               </div>
             ) : (
@@ -174,7 +175,7 @@ const WalletConnect = ({ onConnectionChange }) => {
           {typeof window.ethereum === 'undefined' && (
             <div className="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded-2xl">
               <p className="text-sm text-yellow-700 mb-2">
-                未检测到 MetaMask 钱包
+                请安装 MetaMask
               </p>
               <a
                 href="https://metamask.io/download/"
@@ -193,16 +194,17 @@ const WalletConnect = ({ onConnectionChange }) => {
   }
 
   return (
-    <div className="card-cute">
+    <div className="card-cute" data-testid="wallet-connect">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
           <CheckCircle className="w-5 h-5 text-mint-500" />
           <span className="font-semibold text-gray-800">钱包已连接</span>
         </div>
-        
+
         <button
           onClick={disconnectWallet}
           className="text-sm text-gray-500 hover:text-gray-700 transition-colors"
+          data-testid="disconnect-wallet-btn"
         >
           断开连接
         </button>
@@ -213,12 +215,13 @@ const WalletConnect = ({ onConnectionChange }) => {
         <div className="flex items-center justify-between p-3 bg-gray-50 rounded-2xl">
           <div>
             <p className="text-xs text-gray-500 mb-1">账户地址</p>
-            <p className="font-mono text-sm text-gray-800">{formatAddress(account)}</p>
+            <p className="font-mono text-sm text-gray-800" data-testid="wallet-address">{formatAddress(account)}</p>
           </div>
           <button
             onClick={copyAddress}
             className="p-2 hover:bg-gray-200 rounded-lg transition-colors"
             title="复制地址"
+            data-testid="copy-address-btn"
           >
             {copied ? (
               <CheckCircle className="w-4 h-4 text-mint-500" />
@@ -231,14 +234,14 @@ const WalletConnect = ({ onConnectionChange }) => {
         <div className="flex items-center justify-between p-3 bg-gray-50 rounded-2xl">
           <div>
             <p className="text-xs text-gray-500 mb-1">余额</p>
-            <p className="font-semibold text-gray-800">{formatBalance(balance)} ETH</p>
+            <p className="font-semibold text-gray-800" data-testid="wallet-balance">{formatBalance(balance)} ETH</p>
           </div>
         </div>
 
         <div className="flex items-center justify-between p-3 bg-gray-50 rounded-2xl">
           <div>
             <p className="text-xs text-gray-500 mb-1">网络</p>
-            <p className="text-sm text-gray-800">{getNetworkName(network)}</p>
+            <p className="text-sm text-gray-800" data-testid="network-info">{getNetworkName(network)}</p>
           </div>
           <div className="flex items-center gap-1">
             {isSupportedNetwork(network) ? (
@@ -256,7 +259,7 @@ const WalletConnect = ({ onConnectionChange }) => {
               <span className="text-sm font-medium text-yellow-800">网络不支持</span>
             </div>
             <p className="text-xs text-yellow-700">
-              请切换到 Ethereum 主网或 Sepolia 测试网以使用此应用
+              请切换到 Sepolia 测试网
             </p>
           </div>
         )}

@@ -58,15 +58,18 @@ const useGameState = () => {
     try {
       const info = await web3Manager.getGameInfo();
       setGameInfo(info);
-      
+
       if (info.initialized && info.width > 0 && info.height > 0) {
         initializeBoard(info.width, info.height);
         setGameStarted(info.status !== GameStatus.NOT_STARTED);
         setGameEnded(info.status === GameStatus.WON || info.status === GameStatus.LOST);
-        
+
         // 如果游戏已开始，获取已揭示的格子
         if (info.status !== GameStatus.NOT_STARTED) {
-          await fetchRevealedCells(info.width, info.height);
+          // 使用 setTimeout 避免同步调用导致的循环
+          setTimeout(() => {
+            fetchRevealedCells(info.width, info.height);
+          }, 0);
         }
       }
     } catch (error) {
@@ -77,7 +80,7 @@ const useGameState = () => {
 
   // 获取已揭示的格子
   const fetchRevealedCells = useCallback(async (width, height) => {
-    if (!web3Manager.isConnected()) return;
+    if (!web3Manager.isConnected() || !width || !height) return;
 
     try {
       const revealed = new Set();
@@ -169,11 +172,10 @@ const useGameState = () => {
 
     try {
       await web3Manager.revealCell(x, y);
-      
-      // 等待交易确认后刷新状态
+
+      // 等待交易确认后刷新状态，使用单一刷新函数避免循环调用
       setTimeout(() => {
         fetchGameInfo();
-        fetchRevealedCells(gameInfo.width, gameInfo.height);
       }, 2000);
 
       return true;
@@ -184,7 +186,7 @@ const useGameState = () => {
     } finally {
       setIsLoading(false);
     }
-  }, [gameEnded, revealedCells, fetchGameInfo, fetchRevealedCells, gameInfo.width, gameInfo.height]);
+  }, [gameEnded, revealedCells, fetchGameInfo]);
 
   // 设置事件监听器
   const setupEventListeners = useCallback(() => {
@@ -193,7 +195,7 @@ const useGameState = () => {
     const callbacks = {
       onGameStarted: (event) => {
         console.log('游戏开始事件:', event);
-        fetchGameInfo();
+        setTimeout(() => fetchGameInfo(), 0);
         setGameStarted(true);
         setGameEnded(false);
       },
@@ -201,7 +203,7 @@ const useGameState = () => {
       onCellRevealed: (event) => {
         console.log('格子揭示事件:', event);
         const { x, y, isMine, adjacentMines } = event;
-        
+
         // 更新本地状态
         setRevealedCells(prev => new Set([...prev, `${x}-${y}`]));
         setBoard(prev => {
@@ -221,20 +223,24 @@ const useGameState = () => {
       onGameWon: (event) => {
         console.log('游戏胜利事件:', event);
         setGameEnded(true);
-        fetchGameInfo();
-        fetchPlayerStats();
+        setTimeout(() => {
+          fetchGameInfo();
+          fetchPlayerStats();
+        }, 0);
       },
 
       onGameLost: (event) => {
         console.log('游戏失败事件:', event);
         setGameEnded(true);
-        fetchGameInfo();
-        fetchPlayerStats();
+        setTimeout(() => {
+          fetchGameInfo();
+          fetchPlayerStats();
+        }, 0);
       },
 
       onHighScoreUpdated: (event) => {
         console.log('最高分更新事件:', event);
-        fetchPlayerStats();
+        setTimeout(() => fetchPlayerStats(), 0);
       }
     };
 
@@ -270,21 +276,74 @@ const useGameState = () => {
     setError('');
   }, []);
 
-  // 初始化和清理
+  // 初始化和清理 - 使用 useRef 来避免依赖项导致的无限循环
+  const initializeRef = useRef(false);
+  const isConnectedRef = useRef(false);
+
   useEffect(() => {
-    if (web3Manager.isConnected()) {
-      fetchGameInfo();
-      fetchPlayerStats();
-      setupEventListeners();
-    } else {
-      resetGameState();
-      cleanupEventListeners();
-    }
+    const initialize = async () => {
+      const connected = web3Manager.isConnected();
+
+      if (connected && !initializeRef.current) {
+        await fetchGameInfo();
+        await fetchPlayerStats();
+        setupEventListeners();
+        initializeRef.current = true;
+        isConnectedRef.current = true;
+      } else if (!connected && isConnectedRef.current) {
+        resetGameState();
+        cleanupEventListeners();
+        initializeRef.current = false;
+        isConnectedRef.current = false;
+      }
+    };
+
+    initialize();
 
     return () => {
       cleanupEventListeners();
+      initializeRef.current = false;
+      isConnectedRef.current = false;
     };
-  }, [fetchGameInfo, fetchPlayerStats, setupEventListeners, cleanupEventListeners, resetGameState]);
+  }, []); // 移除所有依赖项，使用 ref 来控制初始化
+
+  // 监听连接状态变化 - 使用事件而不是轮询
+  useEffect(() => {
+    const handleConnectionChange = (connected) => {
+      if (connected !== isConnectedRef.current) {
+        if (connected) {
+          setTimeout(() => {
+            fetchGameInfo();
+            fetchPlayerStats();
+            setupEventListeners();
+            initializeRef.current = true;
+          }, 100);
+        } else {
+          resetGameState();
+          cleanupEventListeners();
+          initializeRef.current = false;
+        }
+        isConnectedRef.current = connected;
+      }
+    };
+
+    // 监听钱包连接事件而不是轮询
+    if (window.ethereum) {
+      window.ethereum.on('accountsChanged', () => {
+        handleConnectionChange(web3Manager.isConnected());
+      });
+      window.ethereum.on('chainChanged', () => {
+        handleConnectionChange(web3Manager.isConnected());
+      });
+    }
+
+    return () => {
+      if (window.ethereum) {
+        window.ethereum.removeAllListeners('accountsChanged');
+        window.ethereum.removeAllListeners('chainChanged');
+      }
+    };
+  }, []);
 
   // 格式化游戏时间
   const getGameDuration = useCallback(() => {

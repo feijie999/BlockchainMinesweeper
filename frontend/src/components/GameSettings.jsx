@@ -107,7 +107,7 @@ const GameSettings = ({ onStartGame, isConnected, isGameActive }) => {
   const difficulty = getDifficultyLevel();
 
   return (
-    <div className="card-cute">
+    <div className="card-cute" data-testid="game-settings">
       <div className="flex items-center gap-2 mb-6">
         <Settings className="w-5 h-5 text-pink-500" />
         <h3 className="text-xl font-bold text-gray-800">游戏设置</h3>
@@ -116,7 +116,7 @@ const GameSettings = ({ onStartGame, isConnected, isGameActive }) => {
       {/* 预设难度选择 */}
       <div className="mb-6">
         <h4 className="text-sm font-semibold text-gray-700 mb-3">选择难度</h4>
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-2 gap-3" data-testid="difficulty-presets">
           {Object.entries(presets).map(([key, preset]) => (
             <button
               key={key}
@@ -126,6 +126,7 @@ const GameSettings = ({ onStartGame, isConnected, isGameActive }) => {
                   ? 'border-pink-400 bg-pink-50 shadow-cute'
                   : 'border-gray-200 bg-white hover:border-pink-300 hover:bg-pink-25'
               }`}
+              data-testid={`difficulty-${key}`}
             >
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-lg">{preset.icon}</span>
@@ -138,7 +139,7 @@ const GameSettings = ({ onStartGame, isConnected, isGameActive }) => {
       </div>
 
       {/* 自定义设置 */}
-      <div className="mb-6">
+      <div className="mb-6" data-testid="custom-settings">
         <div className="flex items-center justify-between mb-3">
           <h4 className="text-sm font-semibold text-gray-700">自定义设置</h4>
           <button
@@ -148,6 +149,7 @@ const GameSettings = ({ onStartGame, isConnected, isGameActive }) => {
                 ? 'bg-lavender-100 text-lavender-700'
                 : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
             }`}
+            data-testid="enable-custom-btn"
           >
             {isCustom ? '已启用' : '启用自定义'}
           </button>
@@ -172,6 +174,7 @@ const GameSettings = ({ onStartGame, isConnected, isGameActive }) => {
                     handleCustomChange();
                   }}
                   className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider-pink"
+                  data-testid="width-input"
                 />
               </div>
               <div>
@@ -186,6 +189,7 @@ const GameSettings = ({ onStartGame, isConnected, isGameActive }) => {
                     handleCustomChange();
                   }}
                   className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider-pink"
+                  data-testid="height-input"
                 />
               </div>
             </div>
@@ -206,6 +210,7 @@ const GameSettings = ({ onStartGame, isConnected, isGameActive }) => {
                 handleCustomChange();
               }}
               className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider-pink"
+              data-testid="mine-count-input"
             />
           </div>
         </div>
@@ -256,6 +261,7 @@ const GameSettings = ({ onStartGame, isConnected, isGameActive }) => {
           onClick={handleStartGame}
           disabled={!isConnected || isGameActive}
           className="btn-pink w-full disabled:opacity-50 disabled:cursor-not-allowed"
+          data-testid="start-game-btn"
         >
           <div className="flex items-center justify-center gap-2">
             {isGameActive ? (
@@ -273,7 +279,7 @@ const GameSettings = ({ onStartGame, isConnected, isGameActive }) => {
         </button>
 
         {!isConnected && (
-          <p className="text-center text-sm text-gray-500">
+          <p className="text-center text-sm text-gray-500" data-testid="connect-wallet-prompt">
             请先连接钱包以开始游戏
           </p>
         )}

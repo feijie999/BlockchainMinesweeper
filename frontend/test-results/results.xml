@@ -1,0 +1,1825 @@
+<testsuites id="" name="" tests="45" failures="38" skipped="0" errors="0" time="88.006395">
+<testsuite name="e2e/performance-accessibility.spec.js" timestamp="2025-06-17T12:24:07.594Z" hostname="chromium" tests="9" failures="9" skipped="0" time="91.282" errors="0">
+<testcase name="性能和可访问性测试 › 页面加载性能测试" classname="e2e/performance-accessibility.spec.js" time="10.613">
+<failure message="performance-accessibility.spec.js:13:3 页面加载性能测试" type="FAILURE">
+<![CDATA[  [chromium] › e2e/performance-accessibility.spec.js:13:3 › 性能和可访问性测试 › 页面加载性能测试 ───────────────────
+
+    TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('h1:has-text("区块链扫雷")') to be visible
+        4 × waiting for" http://localhost:5174/" navigation to finish...
+          - navigated to "http://localhost:5174/"
+        - waiting for navigation to finish...
+        - navigated to "http://localhost:5174/"
+        - waiting for" http://localhost:5174/" navigation to finish...
+        - navigated to "http://localhost:5174/"
+
+
+       at page-objects/MainPage.js:64
+
+      62 |
+      63 |   async waitForPageLoad() {
+    > 64 |     await this.page.waitForSelector(this.selectors.title);
+         |                     ^
+      65 |     // 使用 domcontentloaded 而不是 networkidle 来避免无限循环问题
+      66 |     await this.page.waitForLoadState('domcontentloaded');
+      67 |     // 等待一小段时间确保页面稳定
+        at MainPage.waitForPageLoad (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:64:21)
+        at MainPage.goto (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:60:16)
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:16:7
+        at measurePerformance (/Users/feijie/Projects/扫雷游戏/frontend/tests/utils/test-helpers.js:157:3)
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:15:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-页面加载性能测试-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-页面加载性能测试-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-performance-accessibility-性能和可访问性测试-页面加载性能测试-chromium/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-页面加载性能测试-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-页面加载性能测试-chromium/video.webm]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-页面加载性能测试-chromium/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 游戏交互性能测试" classname="e2e/performance-accessibility.spec.js" time="10.653">
+<failure message="performance-accessibility.spec.js:67:3 游戏交互性能测试" type="FAILURE">
+<![CDATA[  [chromium] › e2e/performance-accessibility.spec.js:67:3 › 性能和可访问性测试 › 游戏交互性能测试 ───────────────────
+
+    TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('h1:has-text("区块链扫雷")') to be visible
+        - waiting for" http://localhost:5174/" navigation to finish...
+        2 × navigated to "http://localhost:5174/"
+          - waiting for navigation to finish...
+        3 × navigated to "http://localhost:5174/"
+          - waiting for" http://localhost:5174/" navigation to finish...
+        - navigated to "http://localhost:5174/"
+        - waiting for navigation to finish...
+        6 × navigated to "http://localhost:5174/"
+          - waiting for" http://localhost:5174/" navigation to finish...
+        - navigated to "http://localhost:5174/"
+
+
+       at page-objects/MainPage.js:64
+
+      62 |
+      63 |   async waitForPageLoad() {
+    > 64 |     await this.page.waitForSelector(this.selectors.title);
+         |                     ^
+      65 |     // 使用 domcontentloaded 而不是 networkidle 来避免无限循环问题
+      66 |     await this.page.waitForLoadState('domcontentloaded');
+      67 |     // 等待一小段时间确保页面稳定
+        at MainPage.waitForPageLoad (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:64:21)
+        at MainPage.goto (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:60:16)
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:68:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-游戏交互性能测试-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-游戏交互性能测试-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-performance-accessibility-性能和可访问性测试-游戏交互性能测试-chromium/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-游戏交互性能测试-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-游戏交互性能测试-chromium/video.webm]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-游戏交互性能测试-chromium/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 内存使用测试" classname="e2e/performance-accessibility.spec.js" time="10.556">
+<failure message="performance-accessibility.spec.js:94:3 内存使用测试" type="FAILURE">
+<![CDATA[  [chromium] › e2e/performance-accessibility.spec.js:94:3 › 性能和可访问性测试 › 内存使用测试 ─────────────────────
+
+    TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('h1:has-text("区块链扫雷")') to be visible
+        - waiting for" http://localhost:5174/" navigation to finish...
+        - navigated to "http://localhost:5174/"
+        - waiting for navigation to finish...
+        4 × navigated to "http://localhost:5174/"
+          - waiting for" http://localhost:5174/" navigation to finish...
+        - navigated to "http://localhost:5174/"
+        - waiting for navigation to finish...
+        - navigated to "http://localhost:5174/"
+
+
+       at page-objects/MainPage.js:64
+
+      62 |
+      63 |   async waitForPageLoad() {
+    > 64 |     await this.page.waitForSelector(this.selectors.title);
+         |                     ^
+      65 |     // 使用 domcontentloaded 而不是 networkidle 来避免无限循环问题
+      66 |     await this.page.waitForLoadState('domcontentloaded');
+      67 |     // 等待一小段时间确保页面稳定
+        at MainPage.waitForPageLoad (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:64:21)
+        at MainPage.goto (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:60:16)
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:95:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-内存使用测试-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-内存使用测试-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-performance-accessibility-性能和可访问性测试-内存使用测试-chromium/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-内存使用测试-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-内存使用测试-chromium/video.webm]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-内存使用测试-chromium/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 可访问性基础检查" classname="e2e/performance-accessibility.spec.js" time="10.568">
+<failure message="performance-accessibility.spec.js:147:3 可访问性基础检查" type="FAILURE">
+<![CDATA[  [chromium] › e2e/performance-accessibility.spec.js:147:3 › 性能和可访问性测试 › 可访问性基础检查 ──────────────────
+
+    TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('h1:has-text("区块链扫雷")') to be visible
+
+
+       at page-objects/MainPage.js:64
+
+      62 |
+      63 |   async waitForPageLoad() {
+    > 64 |     await this.page.waitForSelector(this.selectors.title);
+         |                     ^
+      65 |     // 使用 domcontentloaded 而不是 networkidle 来避免无限循环问题
+      66 |     await this.page.waitForLoadState('domcontentloaded');
+      67 |     // 等待一小段时间确保页面稳定
+        at MainPage.waitForPageLoad (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:64:21)
+        at MainPage.goto (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:60:16)
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:148:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-可访问性基础检查-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-可访问性基础检查-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-performance-accessibility-性能和可访问性测试-可访问性基础检查-chromium/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-可访问性基础检查-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-可访问性基础检查-chromium/video.webm]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-可访问性基础检查-chromium/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 键盘导航测试" classname="e2e/performance-accessibility.spec.js" time="1.345">
+<failure message="performance-accessibility.spec.js:161:3 键盘导航测试" type="FAILURE">
+<![CDATA[  [chromium] › e2e/performance-accessibility.spec.js:161:3 › 性能和可访问性测试 › 键盘导航测试 ────────────────────
+
+    Error: expect(received).toBeGreaterThan(expected)
+
+    Expected: > 3
+    Received:   0
+
+      186 |     );
+      187 |     
+    > 188 |     expect(interactiveElements.length).toBeGreaterThan(3);
+          |                                        ^
+      189 |   });
+      190 |
+      191 |   test('屏幕阅读器支持测试', async ({ page }) => {
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:188:40
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-键盘导航测试-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-键盘导航测试-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-performance-accessibility-性能和可访问性测试-键盘导航测试-chromium/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[键盘导航路径: [
+  { tagName: [32m'BODY'[39m, id: [32m''[39m, className: [32m''[39m, textContent: [32m''[39m },
+  { tagName: [32m'BODY'[39m, id: [32m''[39m, className: [32m''[39m, textContent: [32m''[39m },
+  { tagName: [32m'BODY'[39m, id: [32m''[39m, className: [32m''[39m, textContent: [32m''[39m },
+  { tagName: [32m'BODY'[39m, id: [32m''[39m, className: [32m''[39m, textContent: [32m''[39m },
+  { tagName: [32m'BODY'[39m, id: [32m''[39m, className: [32m''[39m, textContent: [32m''[39m },
+  { tagName: [32m'BODY'[39m, id: [32m''[39m, className: [32m''[39m, textContent: [32m''[39m },
+  { tagName: [32m'BODY'[39m, id: [32m''[39m, className: [32m''[39m, textContent: [32m''[39m },
+  { tagName: [32m'BODY'[39m, id: [32m''[39m, className: [32m''[39m, textContent: [32m''[39m },
+  { tagName: [32m'BODY'[39m, id: [32m''[39m, className: [32m''[39m, textContent: [32m''[39m },
+  { tagName: [32m'BODY'[39m, id: [32m''[39m, className: [32m''[39m, textContent: [32m''[39m }
+]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-键盘导航测试-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-键盘导航测试-chromium/video.webm]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-键盘导航测试-chromium/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 屏幕阅读器支持测试" classname="e2e/performance-accessibility.spec.js" time="10.63">
+<failure message="performance-accessibility.spec.js:191:3 屏幕阅读器支持测试" type="FAILURE">
+<![CDATA[  [chromium] › e2e/performance-accessibility.spec.js:191:3 › 性能和可访问性测试 › 屏幕阅读器支持测试 ─────────────────
+
+    TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('h1:has-text("区块链扫雷")') to be visible
+        - waiting for navigation to finish...
+        7 × navigated to "http://localhost:5174/"
+          - waiting for" http://localhost:5174/" navigation to finish...
+        - navigated to "http://localhost:5174/"
+
+
+       at page-objects/MainPage.js:64
+
+      62 |
+      63 |   async waitForPageLoad() {
+    > 64 |     await this.page.waitForSelector(this.selectors.title);
+         |                     ^
+      65 |     // 使用 domcontentloaded 而不是 networkidle 来避免无限循环问题
+      66 |     await this.page.waitForLoadState('domcontentloaded');
+      67 |     // 等待一小段时间确保页面稳定
+        at MainPage.waitForPageLoad (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:64:21)
+        at MainPage.goto (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:60:16)
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:192:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-屏幕阅读器支持测试-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-屏幕阅读器支持测试-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-performance-accessibility-性能和可访问性测试-屏幕阅读器支持测试-chromium/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-屏幕阅读器支持测试-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-屏幕阅读器支持测试-chromium/video.webm]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-屏幕阅读器支持测试-chromium/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 颜色对比度测试" classname="e2e/performance-accessibility.spec.js" time="10.328">
+<failure message="performance-accessibility.spec.js:221:3 颜色对比度测试" type="FAILURE">
+<![CDATA[  [chromium] › e2e/performance-accessibility.spec.js:221:3 › 性能和可访问性测试 › 颜色对比度测试 ───────────────────
+
+    TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('h1:has-text("区块链扫雷")') to be visible
+        - waiting for" http://localhost:5174/" navigation to finish...
+        - navigated to "http://localhost:5174/"
+
+
+       at page-objects/MainPage.js:64
+
+      62 |
+      63 |   async waitForPageLoad() {
+    > 64 |     await this.page.waitForSelector(this.selectors.title);
+         |                     ^
+      65 |     // 使用 domcontentloaded 而不是 networkidle 来避免无限循环问题
+      66 |     await this.page.waitForLoadState('domcontentloaded');
+      67 |     // 等待一小段时间确保页面稳定
+        at MainPage.waitForPageLoad (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:64:21)
+        at MainPage.goto (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:60:16)
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:222:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-颜色对比度测试-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-颜色对比度测试-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-performance-accessibility-性能和可访问性测试-颜色对比度测试-chromium/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-颜色对比度测试-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-颜色对比度测试-chromium/video.webm]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-颜色对比度测试-chromium/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 移动设备可访问性测试" classname="e2e/performance-accessibility.spec.js" time="10.307">
+<failure message="performance-accessibility.spec.js:253:3 移动设备可访问性测试" type="FAILURE">
+<![CDATA[  [chromium] › e2e/performance-accessibility.spec.js:253:3 › 性能和可访问性测试 › 移动设备可访问性测试 ────────────────
+
+    TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('h1:has-text("区块链扫雷")') to be visible
+        6 × waiting for" http://localhost:5174/" navigation to finish...
+          - navigated to "http://localhost:5174/"
+
+
+       at page-objects/MainPage.js:64
+
+      62 |
+      63 |   async waitForPageLoad() {
+    > 64 |     await this.page.waitForSelector(this.selectors.title);
+         |                     ^
+      65 |     // 使用 domcontentloaded 而不是 networkidle 来避免无限循环问题
+      66 |     await this.page.waitForLoadState('domcontentloaded');
+      67 |     // 等待一小段时间确保页面稳定
+        at MainPage.waitForPageLoad (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:64:21)
+        at MainPage.goto (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:60:16)
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:256:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-移动设备可访问性测试-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-移动设备可访问性测试-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-performance-accessibility-性能和可访问性测试-移动设备可访问性测试-chromium/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-移动设备可访问性测试-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-移动设备可访问性测试-chromium/video.webm]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-移动设备可访问性测试-chromium/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 网络条件性能测试" classname="e2e/performance-accessibility.spec.js" time="16.282">
+<failure message="performance-accessibility.spec.js:280:3 网络条件性能测试" type="FAILURE">
+<![CDATA[  [chromium] › e2e/performance-accessibility.spec.js:280:3 › 性能和可访问性测试 › 网络条件性能测试 ──────────────────
+
+    TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('h1:has-text("区块链扫雷")') to be visible
+        6 × waiting for" http://localhost:5174/" navigation to finish...
+          - navigated to "http://localhost:5174/"
+
+
+       at page-objects/MainPage.js:64
+
+      62 |
+      63 |   async waitForPageLoad() {
+    > 64 |     await this.page.waitForSelector(this.selectors.title);
+         |                     ^
+      65 |     // 使用 domcontentloaded 而不是 networkidle 来避免无限循环问题
+      66 |     await this.page.waitForLoadState('domcontentloaded');
+      67 |     // 等待一小段时间确保页面稳定
+        at MainPage.waitForPageLoad (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:64:21)
+        at MainPage.goto (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:60:16)
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:288:7
+        at measurePerformance (/Users/feijie/Projects/扫雷游戏/frontend/tests/utils/test-helpers.js:157:3)
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:287:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-网络条件性能测试-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-网络条件性能测试-chromium/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-网络条件性能测试-chromium/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-网络条件性能测试-chromium/video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="e2e/performance-accessibility.spec.js" timestamp="2025-06-17T12:24:07.594Z" hostname="firefox" tests="9" failures="7" skipped="0" time="61.827" errors="0">
+<testcase name="性能和可访问性测试 › 页面加载性能测试" classname="e2e/performance-accessibility.spec.js" time="2.049">
+<system-out>
+<![CDATA[页面加载时间: 1079ms
+性能指标: { loadTime: [33m0[39m, domContentLoaded: [33m0[39m, fcp: [33m95[39m }
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 游戏交互性能测试" classname="e2e/performance-accessibility.spec.js" time="10.988">
+<failure message="performance-accessibility.spec.js:67:3 游戏交互性能测试" type="FAILURE">
+<![CDATA[  [firefox] › e2e/performance-accessibility.spec.js:67:3 › 性能和可访问性测试 › 游戏交互性能测试 ────────────────────
+
+    TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('h1:has-text("区块链扫雷")') to be visible
+        2 × waiting for" http://localhost:5174/" navigation to finish...
+          - navigated to "http://localhost:5174/"
+
+
+       at page-objects/MainPage.js:64
+
+      62 |
+      63 |   async waitForPageLoad() {
+    > 64 |     await this.page.waitForSelector(this.selectors.title);
+         |                     ^
+      65 |     // 使用 domcontentloaded 而不是 networkidle 来避免无限循环问题
+      66 |     await this.page.waitForLoadState('domcontentloaded');
+      67 |     // 等待一小段时间确保页面稳定
+        at MainPage.waitForPageLoad (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:64:21)
+        at MainPage.goto (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:60:16)
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:68:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-游戏交互性能测试-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-performance-accessibility-性能和可访问性测试-游戏交互性能测试-firefox/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-游戏交互性能测试-firefox/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-游戏交互性能测试-firefox/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 内存使用测试" classname="e2e/performance-accessibility.spec.js" time="11.2">
+<failure message="performance-accessibility.spec.js:94:3 内存使用测试" type="FAILURE">
+<![CDATA[  [firefox] › e2e/performance-accessibility.spec.js:94:3 › 性能和可访问性测试 › 内存使用测试 ──────────────────────
+
+    TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('h1:has-text("区块链扫雷")') to be visible
+        - waiting for" http://localhost:5174/" navigation to finish...
+        - navigated to "http://localhost:5174/"
+
+
+       at page-objects/MainPage.js:64
+
+      62 |
+      63 |   async waitForPageLoad() {
+    > 64 |     await this.page.waitForSelector(this.selectors.title);
+         |                     ^
+      65 |     // 使用 domcontentloaded 而不是 networkidle 来避免无限循环问题
+      66 |     await this.page.waitForLoadState('domcontentloaded');
+      67 |     // 等待一小段时间确保页面稳定
+        at MainPage.waitForPageLoad (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:64:21)
+        at MainPage.goto (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:60:16)
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:95:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-内存使用测试-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-performance-accessibility-性能和可访问性测试-内存使用测试-firefox/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-内存使用测试-firefox/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-内存使用测试-firefox/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 可访问性基础检查" classname="e2e/performance-accessibility.spec.js" time="2.184">
+<failure message="performance-accessibility.spec.js:147:3 可访问性基础检查" type="FAILURE">
+<![CDATA[  [firefox] › e2e/performance-accessibility.spec.js:147:3 › 性能和可访问性测试 › 可访问性基础检查 ───────────────────
+
+    Error: page.$$eval: Execution context was destroyed, most likely because of a navigation
+
+       at utils/test-helpers.js:124
+
+      122 |     // 检查是否有 alt 属性的图片
+      123 |     async () => {
+    > 124 |       const imagesWithoutAlt = await page.$$eval('img:not([alt])', imgs => imgs.length);
+          |                                           ^
+      125 |       return { name: 'Images with alt text', passed: imagesWithoutAlt === 0 };
+      126 |     },
+      127 |     
+        at check (/Users/feijie/Projects/扫雷游戏/frontend/tests/utils/test-helpers.js:124:43)
+        at checkAccessibility (/Users/feijie/Projects/扫雷游戏/frontend/tests/utils/test-helpers.js:146:24)
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:151:40
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-可访问性基础检查-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-performance-accessibility-性能和可访问性测试-可访问性基础检查-firefox/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-可访问性基础检查-firefox/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-可访问性基础检查-firefox/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 键盘导航测试" classname="e2e/performance-accessibility.spec.js" time="2.587">
+<failure message="performance-accessibility.spec.js:161:3 键盘导航测试" type="FAILURE">
+<![CDATA[  [firefox] › e2e/performance-accessibility.spec.js:161:3 › 性能和可访问性测试 › 键盘导航测试 ─────────────────────
+
+    Error: page.evaluate: Execution context was destroyed, most likely because of a navigation
+
+      167 |     for (let i = 0; i < 10; i++) {
+      168 |       await page.keyboard.press('Tab');
+    > 169 |       const focusedElement = await page.evaluate(() => {
+          |                                         ^
+      170 |         const element = document.activeElement;
+      171 |         return {
+      172 |           tagName: element.tagName,
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:169:41
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-键盘导航测试-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-performance-accessibility-性能和可访问性测试-键盘导航测试-firefox/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-键盘导航测试-firefox/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-键盘导航测试-firefox/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 屏幕阅读器支持测试" classname="e2e/performance-accessibility.spec.js" time="1.994">
+<failure message="performance-accessibility.spec.js:191:3 屏幕阅读器支持测试" type="FAILURE">
+<![CDATA[  [firefox] › e2e/performance-accessibility.spec.js:191:3 › 性能和可访问性测试 › 屏幕阅读器支持测试 ──────────────────
+
+    Error: expect(received).toBeGreaterThan(expected)
+
+    Expected: > 0
+    Received:   0
+
+      204 |     
+      205 |     // 应该有适当的 ARIA 标签
+    > 206 |     expect(ariaLabels.length).toBeGreaterThan(0);
+          |                               ^
+      207 |     
+      208 |     // 检查语义化标签
+      209 |     const semanticElements = await page.$$eval('main, nav, header, footer, section, article', elements => 
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:206:31
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-屏幕阅读器支持测试-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[ARIA 标签: []
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-屏幕阅读器支持测试-firefox/test-failed-1.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 颜色对比度测试" classname="e2e/performance-accessibility.spec.js" time="11.093">
+<failure message="performance-accessibility.spec.js:221:3 颜色对比度测试" type="FAILURE">
+<![CDATA[  [firefox] › e2e/performance-accessibility.spec.js:221:3 › 性能和可访问性测试 › 颜色对比度测试 ────────────────────
+
+    TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('h1:has-text("区块链扫雷")') to be visible
+        2 × waiting for" http://localhost:5174/" navigation to finish...
+          - navigated to "http://localhost:5174/"
+
+
+       at page-objects/MainPage.js:64
+
+      62 |
+      63 |   async waitForPageLoad() {
+    > 64 |     await this.page.waitForSelector(this.selectors.title);
+         |                     ^
+      65 |     // 使用 domcontentloaded 而不是 networkidle 来避免无限循环问题
+      66 |     await this.page.waitForLoadState('domcontentloaded');
+      67 |     // 等待一小段时间确保页面稳定
+        at MainPage.waitForPageLoad (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:64:21)
+        at MainPage.goto (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:60:16)
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:222:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-颜色对比度测试-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-performance-accessibility-性能和可访问性测试-颜色对比度测试-firefox/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-颜色对比度测试-firefox/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-颜色对比度测试-firefox/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 移动设备可访问性测试" classname="e2e/performance-accessibility.spec.js" time="8.166">
+<system-out>
+<![CDATA[触摸目标尺寸: [
+  { width: [33m245[39m, height: [33m45[39m, area: [33m11025[39m },
+  { width: [33m245[39m, height: [33m45[39m, area: [33m11025[39m }
+]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 网络条件性能测试" classname="e2e/performance-accessibility.spec.js" time="11.566">
+<failure message="performance-accessibility.spec.js:280:3 网络条件性能测试" type="FAILURE">
+<![CDATA[  [firefox] › e2e/performance-accessibility.spec.js:280:3 › 性能和可访问性测试 › 网络条件性能测试 ───────────────────
+
+    TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('h1:has-text("区块链扫雷")') to be visible
+        3 × waiting for" http://localhost:5174/" navigation to finish...
+          - navigated to "http://localhost:5174/"
+
+
+       at page-objects/MainPage.js:64
+
+      62 |
+      63 |   async waitForPageLoad() {
+    > 64 |     await this.page.waitForSelector(this.selectors.title);
+         |                     ^
+      65 |     // 使用 domcontentloaded 而不是 networkidle 来避免无限循环问题
+      66 |     await this.page.waitForLoadState('domcontentloaded');
+      67 |     // 等待一小段时间确保页面稳定
+        at MainPage.waitForPageLoad (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:64:21)
+        at MainPage.goto (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:60:16)
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:288:7
+        at measurePerformance (/Users/feijie/Projects/扫雷游戏/frontend/tests/utils/test-helpers.js:157:3)
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:287:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-网络条件性能测试-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-performance-accessibility-性能和可访问性测试-网络条件性能测试-firefox/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-网络条件性能测试-firefox/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-网络条件性能测试-firefox/error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="e2e/performance-accessibility.spec.js" timestamp="2025-06-17T12:24:07.594Z" hostname="webkit" tests="9" failures="7" skipped="0" time="35.719" errors="0">
+<testcase name="性能和可访问性测试 › 页面加载性能测试" classname="e2e/performance-accessibility.spec.js" time="1.317">
+<failure message="performance-accessibility.spec.js:13:3 页面加载性能测试" type="FAILURE">
+<![CDATA[  [webkit] › e2e/performance-accessibility.spec.js:13:3 › 性能和可访问性测试 › 页面加载性能测试 ─────────────────────
+
+    Error: page.evaluate: Execution context was destroyed, most likely because of a navigation
+
+      23 |     
+      24 |     // 检查 Core Web Vitals
+    > 25 |     const metrics = await page.evaluate(() => {
+         |                                ^
+      26 |       return new Promise((resolve) => {
+      27 |         new PerformanceObserver((list) => {
+      28 |           const entries = list.getEntries();
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:25:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-页面加载性能测试-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-页面加载性能测试-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-performance-accessibility-性能和可访问性测试-页面加载性能测试-webkit/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[页面加载时间: 711ms
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-页面加载性能测试-webkit/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-页面加载性能测试-webkit/video.webm]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-页面加载性能测试-webkit/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 游戏交互性能测试" classname="e2e/performance-accessibility.spec.js" time="11.189">
+<failure message="performance-accessibility.spec.js:67:3 游戏交互性能测试" type="FAILURE">
+<![CDATA[  [webkit] › e2e/performance-accessibility.spec.js:67:3 › 性能和可访问性测试 › 游戏交互性能测试 ─────────────────────
+
+    TimeoutError: page.click: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('[data-testid="connect-wallet-btn"]')
+        2 × locator resolved to <button data-testid="connect-wallet-btn" class="btn-pink w-full disabled:opacity-50 disabled:cursor-not-allowed">…</button>
+        - attempting click action
+          - waiting for element to be visible, enabled and stable
+        - element was detached from the DOM, retrying
+
+
+      69 |     
+      70 |     // 连接钱包
+    > 71 |     await page.click('[data-testid="connect-wallet-btn"]');
+         |                ^
+      72 |     await page.waitForSelector('[data-testid="wallet-address"]');
+      73 |     
+      74 |     // 开始游戏
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:71:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-游戏交互性能测试-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-游戏交互性能测试-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-performance-accessibility-性能和可访问性测试-游戏交互性能测试-webkit/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-游戏交互性能测试-webkit/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-游戏交互性能测试-webkit/video.webm]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-游戏交互性能测试-webkit/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 内存使用测试" classname="e2e/performance-accessibility.spec.js" time="2.558">
+</testcase>
+<testcase name="性能和可访问性测试 › 可访问性基础检查" classname="e2e/performance-accessibility.spec.js" time="2.64">
+<failure message="performance-accessibility.spec.js:147:3 可访问性基础检查" type="FAILURE">
+<![CDATA[  [webkit] › e2e/performance-accessibility.spec.js:147:3 › 性能和可访问性测试 › 可访问性基础检查 ────────────────────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      155 |     // 所有检查都应该通过
+      156 |     accessibilityResults.forEach(result => {
+    > 157 |       expect(result.passed).toBe(true);
+          |                             ^
+      158 |     });
+      159 |   });
+      160 |
+        at forEach (/Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:157:29)
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:156:26
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-可访问性基础检查-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-可访问性基础检查-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-performance-accessibility-性能和可访问性测试-可访问性基础检查-webkit/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[可访问性检查结果: [
+  { name: [32m'Images with alt text'[39m, passed: [33mtrue[39m },
+  { name: [32m'Has H1 heading'[39m, passed: [33mfalse[39m },
+  { name: [32m'Buttons have accessible text'[39m, passed: [33mtrue[39m }
+]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-可访问性基础检查-webkit/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-可访问性基础检查-webkit/video.webm]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-可访问性基础检查-webkit/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 键盘导航测试" classname="e2e/performance-accessibility.spec.js" time="1.063">
+<failure message="performance-accessibility.spec.js:161:3 键盘导航测试" type="FAILURE">
+<![CDATA[  [webkit] › e2e/performance-accessibility.spec.js:161:3 › 性能和可访问性测试 › 键盘导航测试 ──────────────────────
+
+    Error: expect(received).toBeGreaterThan(expected)
+
+    Expected: > 3
+    Received:   0
+
+      186 |     );
+      187 |     
+    > 188 |     expect(interactiveElements.length).toBeGreaterThan(3);
+          |                                        ^
+      189 |   });
+      190 |
+      191 |   test('屏幕阅读器支持测试', async ({ page }) => {
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:188:40
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-键盘导航测试-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-键盘导航测试-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-performance-accessibility-性能和可访问性测试-键盘导航测试-webkit/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[键盘导航路径: [
+  {
+    tagName: [32m'BODY'[39m,
+    id: [32m''[39m,
+    className: [32m''[39m,
+    textContent: [32m'哎呀，出错了！应用遇到了一个意外错误，请'[39m
+  },
+  {
+    tagName: [32m'BODY'[39m,
+    id: [32m''[39m,
+    className: [32m''[39m,
+    textContent: [32m'哎呀，出错了！应用遇到了一个意外错误，请'[39m
+  },
+  {
+    tagName: [32m'BODY'[39m,
+    id: [32m''[39m,
+    className: [32m''[39m,
+    textContent: [32m'哎呀，出错了！应用遇到了一个意外错误，请'[39m
+  },
+  {
+    tagName: [32m'BODY'[39m,
+    id: [32m''[39m,
+    className: [32m''[39m,
+    textContent: [32m'哎呀，出错了！应用遇到了一个意外错误，请'[39m
+  },
+  {
+    tagName: [32m'BODY'[39m,
+    id: [32m''[39m,
+    className: [32m''[39m,
+    textContent: [32m'哎呀，出错了！应用遇到了一个意外错误，请'[39m
+  },
+  {
+    tagName: [32m'BODY'[39m,
+    id: [32m''[39m,
+    className: [32m''[39m,
+    textContent: [32m'哎呀，出错了！应用遇到了一个意外错误，请'[39m
+  },
+  {
+    tagName: [32m'BODY'[39m,
+    id: [32m''[39m,
+    className: [32m''[39m,
+    textContent: [32m'哎呀，出错了！应用遇到了一个意外错误，请'[39m
+  },
+  {
+    tagName: [32m'BODY'[39m,
+    id: [32m''[39m,
+    className: [32m''[39m,
+    textContent: [32m'哎呀，出错了！应用遇到了一个意外错误，请'[39m
+  },
+  {
+    tagName: [32m'BODY'[39m,
+    id: [32m''[39m,
+    className: [32m''[39m,
+    textContent: [32m'哎呀，出错了！应用遇到了一个意外错误，请'[39m
+  },
+  {
+    tagName: [32m'BODY'[39m,
+    id: [32m''[39m,
+    className: [32m''[39m,
+    textContent: [32m'哎呀，出错了！应用遇到了一个意外错误，请'[39m
+  }
+]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-键盘导航测试-webkit/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-键盘导航测试-webkit/video.webm]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-键盘导航测试-webkit/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 屏幕阅读器支持测试" classname="e2e/performance-accessibility.spec.js" time="2.12">
+<failure message="performance-accessibility.spec.js:191:3 屏幕阅读器支持测试" type="FAILURE">
+<![CDATA[  [webkit] › e2e/performance-accessibility.spec.js:191:3 › 性能和可访问性测试 › 屏幕阅读器支持测试 ───────────────────
+
+    Error: expect(received).toBeGreaterThan(expected)
+
+    Expected: > 0
+    Received:   0
+
+      204 |     
+      205 |     // 应该有适当的 ARIA 标签
+    > 206 |     expect(ariaLabels.length).toBeGreaterThan(0);
+          |                               ^
+      207 |     
+      208 |     // 检查语义化标签
+      209 |     const semanticElements = await page.$$eval('main, nav, header, footer, section, article', elements => 
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:206:31
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-屏幕阅读器支持测试-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-屏幕阅读器支持测试-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-performance-accessibility-性能和可访问性测试-屏幕阅读器支持测试-webkit/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[ARIA 标签: []
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-屏幕阅读器支持测试-webkit/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-屏幕阅读器支持测试-webkit/video.webm]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-屏幕阅读器支持测试-webkit/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 颜色对比度测试" classname="e2e/performance-accessibility.spec.js" time="1.252">
+<failure message="performance-accessibility.spec.js:221:3 颜色对比度测试" type="FAILURE">
+<![CDATA[  [webkit] › e2e/performance-accessibility.spec.js:221:3 › 性能和可访问性测试 › 颜色对比度测试 ─────────────────────
+
+    Error: expect(received).toBeGreaterThan(expected)
+
+    Expected: > 0
+    Received:   0
+
+      248 |     
+      249 |     // 这里可以添加更详细的对比度计算
+    > 250 |     expect(contrastResults.length).toBeGreaterThan(0);
+          |                                    ^
+      251 |   });
+      252 |
+      253 |   test('移动设备可访问性测试', async ({ page }) => {
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:250:36
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-颜色对比度测试-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-颜色对比度测试-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-performance-accessibility-性能和可访问性测试-颜色对比度测试-webkit/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[颜色对比度检查: []
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-颜色对比度测试-webkit/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-颜色对比度测试-webkit/video.webm]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-颜色对比度测试-webkit/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 移动设备可访问性测试" classname="e2e/performance-accessibility.spec.js" time="1.968">
+<system-out>
+<![CDATA[触摸目标尺寸: [
+  { width: [33m245[39m, height: [33m45[39m, area: [33m11025[39m },
+  { width: [33m245[39m, height: [33m45[39m, area: [33m11025[39m }
+]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 网络条件性能测试" classname="e2e/performance-accessibility.spec.js" time="11.612">
+<failure message="performance-accessibility.spec.js:280:3 网络条件性能测试" type="FAILURE">
+<![CDATA[  [webkit] › e2e/performance-accessibility.spec.js:280:3 › 性能和可访问性测试 › 网络条件性能测试 ────────────────────
+
+    TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('h1:has-text("区块链扫雷")') to be visible
+        6 × waiting for" http://localhost:5174/" navigation to finish...
+          - navigated to "http://localhost:5174/"
+
+
+       at page-objects/MainPage.js:64
+
+      62 |
+      63 |   async waitForPageLoad() {
+    > 64 |     await this.page.waitForSelector(this.selectors.title);
+         |                     ^
+      65 |     // 使用 domcontentloaded 而不是 networkidle 来避免无限循环问题
+      66 |     await this.page.waitForLoadState('domcontentloaded');
+      67 |     // 等待一小段时间确保页面稳定
+        at MainPage.waitForPageLoad (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:64:21)
+        at MainPage.goto (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:60:16)
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:288:7
+        at measurePerformance (/Users/feijie/Projects/扫雷游戏/frontend/tests/utils/test-helpers.js:157:3)
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:287:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-网络条件性能测试-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-网络条件性能测试-webkit/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-performance-accessibility-性能和可访问性测试-网络条件性能测试-webkit/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-网络条件性能测试-webkit/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-网络条件性能测试-webkit/video.webm]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-网络条件性能测试-webkit/error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="e2e/performance-accessibility.spec.js" timestamp="2025-06-17T12:24:07.594Z" hostname="Mobile Chrome" tests="9" failures="8" skipped="0" time="92.892" errors="0">
+<testcase name="性能和可访问性测试 › 页面加载性能测试" classname="e2e/performance-accessibility.spec.js" time="10.363">
+<failure message="performance-accessibility.spec.js:13:3 页面加载性能测试" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › e2e/performance-accessibility.spec.js:13:3 › 性能和可访问性测试 › 页面加载性能测试 ──────────────
+
+    TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('h1:has-text("区块链扫雷")') to be visible
+        2 × waiting for" http://localhost:5174/" navigation to finish...
+          - navigated to "http://localhost:5174/"
+        - waiting for navigation to finish...
+        2 × navigated to "http://localhost:5174/"
+          - waiting for" http://localhost:5174/" navigation to finish...
+        - navigated to "http://localhost:5174/"
+
+
+       at page-objects/MainPage.js:64
+
+      62 |
+      63 |   async waitForPageLoad() {
+    > 64 |     await this.page.waitForSelector(this.selectors.title);
+         |                     ^
+      65 |     // 使用 domcontentloaded 而不是 networkidle 来避免无限循环问题
+      66 |     await this.page.waitForLoadState('domcontentloaded');
+      67 |     // 等待一小段时间确保页面稳定
+        at MainPage.waitForPageLoad (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:64:21)
+        at MainPage.goto (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:60:16)
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:16:7
+        at measurePerformance (/Users/feijie/Projects/扫雷游戏/frontend/tests/utils/test-helpers.js:157:3)
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:15:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-页面加载性能测试-Mobile-Chrome/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-页面加载性能测试-Mobile-Chrome/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-performance-accessibility-性能和可访问性测试-页面加载性能测试-Mobile-Chrome/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-页面加载性能测试-Mobile-Chrome/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-页面加载性能测试-Mobile-Chrome/video.webm]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-页面加载性能测试-Mobile-Chrome/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 游戏交互性能测试" classname="e2e/performance-accessibility.spec.js" time="10.426">
+<failure message="performance-accessibility.spec.js:67:3 游戏交互性能测试" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › e2e/performance-accessibility.spec.js:67:3 › 性能和可访问性测试 › 游戏交互性能测试 ──────────────
+
+    TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('h1:has-text("区块链扫雷")') to be visible
+        8 × waiting for" http://localhost:5174/" navigation to finish...
+          - navigated to "http://localhost:5174/"
+
+
+       at page-objects/MainPage.js:64
+
+      62 |
+      63 |   async waitForPageLoad() {
+    > 64 |     await this.page.waitForSelector(this.selectors.title);
+         |                     ^
+      65 |     // 使用 domcontentloaded 而不是 networkidle 来避免无限循环问题
+      66 |     await this.page.waitForLoadState('domcontentloaded');
+      67 |     // 等待一小段时间确保页面稳定
+        at MainPage.waitForPageLoad (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:64:21)
+        at MainPage.goto (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:60:16)
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:68:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-游戏交互性能测试-Mobile-Chrome/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-游戏交互性能测试-Mobile-Chrome/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-performance-accessibility-性能和可访问性测试-游戏交互性能测试-Mobile-Chrome/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-游戏交互性能测试-Mobile-Chrome/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-游戏交互性能测试-Mobile-Chrome/video.webm]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-游戏交互性能测试-Mobile-Chrome/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 内存使用测试" classname="e2e/performance-accessibility.spec.js" time="17.511">
+<failure message="performance-accessibility.spec.js:94:3 内存使用测试" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › e2e/performance-accessibility.spec.js:94:3 › 性能和可访问性测试 › 内存使用测试 ────────────────
+
+    TimeoutError: page.click: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('[data-testid="connect-wallet-btn"]')
+        - waiting for" http://localhost:5174/" navigation to finish...
+        - navigated to "http://localhost:5174/"
+
+
+      111 |       
+      112 |       // 进行一些操作
+    > 113 |       await page.click('[data-testid="connect-wallet-btn"]');
+          |                  ^
+      114 |       await page.waitForSelector('[data-testid="wallet-address"]');
+      115 |       
+      116 |       // 开始多个游戏
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:113:18
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-内存使用测试-Mobile-Chrome/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-内存使用测试-Mobile-Chrome/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-performance-accessibility-性能和可访问性测试-内存使用测试-Mobile-Chrome/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[初始内存使用: { used: [33m177000000[39m, total: [33m225000000[39m, limit: [33m3760000000[39m }
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-内存使用测试-Mobile-Chrome/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-内存使用测试-Mobile-Chrome/video.webm]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-内存使用测试-Mobile-Chrome/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 可访问性基础检查" classname="e2e/performance-accessibility.spec.js" time="9.112">
+<failure message="performance-accessibility.spec.js:147:3 可访问性基础检查" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › e2e/performance-accessibility.spec.js:147:3 › 性能和可访问性测试 › 可访问性基础检查 ─────────────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      155 |     // 所有检查都应该通过
+      156 |     accessibilityResults.forEach(result => {
+    > 157 |       expect(result.passed).toBe(true);
+          |                             ^
+      158 |     });
+      159 |   });
+      160 |
+        at forEach (/Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:157:29)
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:156:26
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-可访问性基础检查-Mobile-Chrome/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-可访问性基础检查-Mobile-Chrome/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-performance-accessibility-性能和可访问性测试-可访问性基础检查-Mobile-Chrome/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[可访问性检查结果: [
+  { name: [32m'Images with alt text'[39m, passed: [33mtrue[39m },
+  { name: [32m'Has H1 heading'[39m, passed: [33mfalse[39m },
+  { name: [32m'Buttons have accessible text'[39m, passed: [33mtrue[39m }
+]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-可访问性基础检查-Mobile-Chrome/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-可访问性基础检查-Mobile-Chrome/video.webm]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-可访问性基础检查-Mobile-Chrome/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 键盘导航测试" classname="e2e/performance-accessibility.spec.js" time="10.413">
+<failure message="performance-accessibility.spec.js:161:3 键盘导航测试" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › e2e/performance-accessibility.spec.js:161:3 › 性能和可访问性测试 › 键盘导航测试 ───────────────
+
+    TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('h1:has-text("区块链扫雷")') to be visible
+        - waiting for navigation to finish...
+        2 × navigated to "http://localhost:5174/"
+          - waiting for" http://localhost:5174/" navigation to finish...
+        - navigated to "http://localhost:5174/"
+
+
+       at page-objects/MainPage.js:64
+
+      62 |
+      63 |   async waitForPageLoad() {
+    > 64 |     await this.page.waitForSelector(this.selectors.title);
+         |                     ^
+      65 |     // 使用 domcontentloaded 而不是 networkidle 来避免无限循环问题
+      66 |     await this.page.waitForLoadState('domcontentloaded');
+      67 |     // 等待一小段时间确保页面稳定
+        at MainPage.waitForPageLoad (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:64:21)
+        at MainPage.goto (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:60:16)
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:162:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-键盘导航测试-Mobile-Chrome/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-键盘导航测试-Mobile-Chrome/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-performance-accessibility-性能和可访问性测试-键盘导航测试-Mobile-Chrome/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-键盘导航测试-Mobile-Chrome/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-键盘导航测试-Mobile-Chrome/video.webm]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-键盘导航测试-Mobile-Chrome/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 屏幕阅读器支持测试" classname="e2e/performance-accessibility.spec.js" time="6.723">
+<failure message="performance-accessibility.spec.js:191:3 屏幕阅读器支持测试" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › e2e/performance-accessibility.spec.js:191:3 › 性能和可访问性测试 › 屏幕阅读器支持测试 ────────────
+
+    Error: expect(received).toBeGreaterThan(expected)
+
+    Expected: > 0
+    Received:   0
+
+      204 |     
+      205 |     // 应该有适当的 ARIA 标签
+    > 206 |     expect(ariaLabels.length).toBeGreaterThan(0);
+          |                               ^
+      207 |     
+      208 |     // 检查语义化标签
+      209 |     const semanticElements = await page.$$eval('main, nav, header, footer, section, article', elements => 
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:206:31
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-屏幕阅读器支持测试-Mobile-Chrome/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-屏幕阅读器支持测试-Mobile-Chrome/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-performance-accessibility-性能和可访问性测试-屏幕阅读器支持测试-Mobile-Chrome/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[ARIA 标签: []
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-屏幕阅读器支持测试-Mobile-Chrome/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-屏幕阅读器支持测试-Mobile-Chrome/video.webm]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-屏幕阅读器支持测试-Mobile-Chrome/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 颜色对比度测试" classname="e2e/performance-accessibility.spec.js" time="6.648">
+<system-out>
+<![CDATA[颜色对比度检查: [
+  {
+    element: [32m'BUTTON'[39m,
+    color: [32m'rgb(190, 24, 93)'[39m,
+    backgroundColor: [32m'rgb(252, 231, 243)'[39m,
+    text: [32m'游戏'[39m
+  },
+  {
+    element: [32m'BUTTON'[39m,
+    color: [32m'rgb(0, 0, 0)'[39m,
+    backgroundColor: [32m'rgb(255, 255, 255)'[39m,
+    text: [32m'🌸简单8×8 棋盘，12% 地雷密度'[39m
+  },
+  {
+    element: [32m'BUTTON'[39m,
+    color: [32m'rgb(0, 0, 0)'[39m,
+    backgroundColor: [32m'rgb(253, 242, 248)'[39m,
+    text: [32m'🌺中等12×12 棋盘，15% 地雷密'[39m
+  },
+  {
+    element: [32m'BUTTON'[39m,
+    color: [32m'rgb(0, 0, 0)'[39m,
+    backgroundColor: [32m'rgb(255, 255, 255)'[39m,
+    text: [32m'🌹困难16×16 棋盘，20% 地雷密'[39m
+  },
+  {
+    element: [32m'BUTTON'[39m,
+    color: [32m'rgb(0, 0, 0)'[39m,
+    backgroundColor: [32m'rgb(255, 255, 255)'[39m,
+    text: [32m'🏵️专家20×20 棋盘，25% 地雷'[39m
+  }
+]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 移动设备可访问性测试" classname="e2e/performance-accessibility.spec.js" time="10.584">
+<failure message="performance-accessibility.spec.js:253:3 移动设备可访问性测试" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › e2e/performance-accessibility.spec.js:253:3 › 性能和可访问性测试 › 移动设备可访问性测试 ───────────
+
+    TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('h1:has-text("区块链扫雷")') to be visible
+        - waiting for" http://localhost:5174/" navigation to finish...
+        - navigated to "http://localhost:5174/"
+        - waiting for navigation to finish...
+        - navigated to "http://localhost:5174/"
+
+
+       at page-objects/MainPage.js:64
+
+      62 |
+      63 |   async waitForPageLoad() {
+    > 64 |     await this.page.waitForSelector(this.selectors.title);
+         |                     ^
+      65 |     // 使用 domcontentloaded 而不是 networkidle 来避免无限循环问题
+      66 |     await this.page.waitForLoadState('domcontentloaded');
+      67 |     // 等待一小段时间确保页面稳定
+        at MainPage.waitForPageLoad (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:64:21)
+        at MainPage.goto (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:60:16)
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:256:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-移动设备可访问性测试-Mobile-Chrome/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-移动设备可访问性测试-Mobile-Chrome/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-performance-accessibility-性能和可访问性测试-移动设备可访问性测试-Mobile-Chrome/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-移动设备可访问性测试-Mobile-Chrome/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-移动设备可访问性测试-Mobile-Chrome/video.webm]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-移动设备可访问性测试-Mobile-Chrome/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 网络条件性能测试" classname="e2e/performance-accessibility.spec.js" time="11.112">
+<failure message="performance-accessibility.spec.js:280:3 网络条件性能测试" type="FAILURE">
+<![CDATA[  [Mobile Chrome] › e2e/performance-accessibility.spec.js:280:3 › 性能和可访问性测试 › 网络条件性能测试 ─────────────
+
+    TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('h1:has-text("区块链扫雷")') to be visible
+        4 × waiting for" http://localhost:5174/" navigation to finish...
+          - navigated to "http://localhost:5174/"
+
+
+       at page-objects/MainPage.js:64
+
+      62 |
+      63 |   async waitForPageLoad() {
+    > 64 |     await this.page.waitForSelector(this.selectors.title);
+         |                     ^
+      65 |     // 使用 domcontentloaded 而不是 networkidle 来避免无限循环问题
+      66 |     await this.page.waitForLoadState('domcontentloaded');
+      67 |     // 等待一小段时间确保页面稳定
+        at MainPage.waitForPageLoad (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:64:21)
+        at MainPage.goto (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:60:16)
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:288:7
+        at measurePerformance (/Users/feijie/Projects/扫雷游戏/frontend/tests/utils/test-helpers.js:157:3)
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:287:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-网络条件性能测试-Mobile-Chrome/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-网络条件性能测试-Mobile-Chrome/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-网络条件性能测试-Mobile-Chrome/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-网络条件性能测试-Mobile-Chrome/video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="e2e/performance-accessibility.spec.js" timestamp="2025-06-17T12:24:07.594Z" hostname="Mobile Safari" tests="9" failures="7" skipped="0" time="42.439" errors="0">
+<testcase name="性能和可访问性测试 › 页面加载性能测试" classname="e2e/performance-accessibility.spec.js" time="2.293">
+<failure message="performance-accessibility.spec.js:13:3 页面加载性能测试" type="FAILURE">
+<![CDATA[  [Mobile Safari] › e2e/performance-accessibility.spec.js:13:3 › 性能和可访问性测试 › 页面加载性能测试 ──────────────
+
+    Error: page.evaluate: Execution context was destroyed, most likely because of a navigation
+
+      23 |     
+      24 |     // 检查 Core Web Vitals
+    > 25 |     const metrics = await page.evaluate(() => {
+         |                                ^
+      26 |       return new Promise((resolve) => {
+      27 |         new PerformanceObserver((list) => {
+      28 |           const entries = list.getEntries();
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:25:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-页面加载性能测试-Mobile-Safari/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-页面加载性能测试-Mobile-Safari/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-performance-accessibility-性能和可访问性测试-页面加载性能测试-Mobile-Safari/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[页面加载时间: 670ms
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-页面加载性能测试-Mobile-Safari/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-页面加载性能测试-Mobile-Safari/video.webm]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-页面加载性能测试-Mobile-Safari/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 游戏交互性能测试" classname="e2e/performance-accessibility.spec.js" time="11.154">
+<failure message="performance-accessibility.spec.js:67:3 游戏交互性能测试" type="FAILURE">
+<![CDATA[  [Mobile Safari] › e2e/performance-accessibility.spec.js:67:3 › 性能和可访问性测试 › 游戏交互性能测试 ──────────────
+
+    TimeoutError: page.click: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('[data-testid="connect-wallet-btn"]')
+        2 × locator resolved to <button data-testid="connect-wallet-btn" class="btn-pink w-full disabled:opacity-50 disabled:cursor-not-allowed">…</button>
+        - attempting click action
+          - waiting for element to be visible, enabled and stable
+        - element was detached from the DOM, retrying
+
+
+      69 |     
+      70 |     // 连接钱包
+    > 71 |     await page.click('[data-testid="connect-wallet-btn"]');
+         |                ^
+      72 |     await page.waitForSelector('[data-testid="wallet-address"]');
+      73 |     
+      74 |     // 开始游戏
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:71:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-游戏交互性能测试-Mobile-Safari/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-游戏交互性能测试-Mobile-Safari/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-游戏交互性能测试-Mobile-Safari/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-游戏交互性能测试-Mobile-Safari/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 内存使用测试" classname="e2e/performance-accessibility.spec.js" time="1.405">
+</testcase>
+<testcase name="性能和可访问性测试 › 可访问性基础检查" classname="e2e/performance-accessibility.spec.js" time="1.316">
+<failure message="performance-accessibility.spec.js:147:3 可访问性基础检查" type="FAILURE">
+<![CDATA[  [Mobile Safari] › e2e/performance-accessibility.spec.js:147:3 › 性能和可访问性测试 › 可访问性基础检查 ─────────────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: true
+    Received: false
+
+      155 |     // 所有检查都应该通过
+      156 |     accessibilityResults.forEach(result => {
+    > 157 |       expect(result.passed).toBe(true);
+          |                             ^
+      158 |     });
+      159 |   });
+      160 |
+        at forEach (/Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:157:29)
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:156:26
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-可访问性基础检查-Mobile-Safari/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-可访问性基础检查-Mobile-Safari/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-performance-accessibility-性能和可访问性测试-可访问性基础检查-Mobile-Safari/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[可访问性检查结果: [
+  { name: [32m'Images with alt text'[39m, passed: [33mtrue[39m },
+  { name: [32m'Has H1 heading'[39m, passed: [33mfalse[39m },
+  { name: [32m'Buttons have accessible text'[39m, passed: [33mtrue[39m }
+]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-可访问性基础检查-Mobile-Safari/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-可访问性基础检查-Mobile-Safari/video.webm]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-可访问性基础检查-Mobile-Safari/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 键盘导航测试" classname="e2e/performance-accessibility.spec.js" time="1.47">
+<failure message="performance-accessibility.spec.js:161:3 键盘导航测试" type="FAILURE">
+<![CDATA[  [Mobile Safari] › e2e/performance-accessibility.spec.js:161:3 › 性能和可访问性测试 › 键盘导航测试 ───────────────
+
+    Error: expect(received).toBeGreaterThan(expected)
+
+    Expected: > 3
+    Received:   0
+
+      186 |     );
+      187 |     
+    > 188 |     expect(interactiveElements.length).toBeGreaterThan(3);
+          |                                        ^
+      189 |   });
+      190 |
+      191 |   test('屏幕阅读器支持测试', async ({ page }) => {
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:188:40
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-键盘导航测试-Mobile-Safari/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-键盘导航测试-Mobile-Safari/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[键盘导航路径: [
+  {
+    tagName: [32m'BODY'[39m,
+    id: [32m''[39m,
+    className: [32m''[39m,
+    textContent: [32m'哎呀，出错了！应用遇到了一个意外错误，请'[39m
+  },
+  {
+    tagName: [32m'BODY'[39m,
+    id: [32m''[39m,
+    className: [32m''[39m,
+    textContent: [32m'哎呀，出错了！应用遇到了一个意外错误，请'[39m
+  },
+  {
+    tagName: [32m'BODY'[39m,
+    id: [32m''[39m,
+    className: [32m''[39m,
+    textContent: [32m'哎呀，出错了！应用遇到了一个意外错误，请'[39m
+  },
+  {
+    tagName: [32m'BODY'[39m,
+    id: [32m''[39m,
+    className: [32m''[39m,
+    textContent: [32m'哎呀，出错了！应用遇到了一个意外错误，请'[39m
+  },
+  {
+    tagName: [32m'BODY'[39m,
+    id: [32m''[39m,
+    className: [32m''[39m,
+    textContent: [32m'哎呀，出错了！应用遇到了一个意外错误，请'[39m
+  },
+  {
+    tagName: [32m'BODY'[39m,
+    id: [32m''[39m,
+    className: [32m''[39m,
+    textContent: [32m'哎呀，出错了！应用遇到了一个意外错误，请'[39m
+  },
+  {
+    tagName: [32m'BODY'[39m,
+    id: [32m''[39m,
+    className: [32m''[39m,
+    textContent: [32m'哎呀，出错了！应用遇到了一个意外错误，请'[39m
+  },
+  {
+    tagName: [32m'BODY'[39m,
+    id: [32m''[39m,
+    className: [32m''[39m,
+    textContent: [32m'哎呀，出错了！应用遇到了一个意外错误，请'[39m
+  },
+  {
+    tagName: [32m'BODY'[39m,
+    id: [32m''[39m,
+    className: [32m''[39m,
+    textContent: [32m'哎呀，出错了！应用遇到了一个意外错误，请'[39m
+  },
+  {
+    tagName: [32m'BODY'[39m,
+    id: [32m''[39m,
+    className: [32m''[39m,
+    textContent: [32m'哎呀，出错了！应用遇到了一个意外错误，请'[39m
+  }
+]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-键盘导航测试-Mobile-Safari/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-键盘导航测试-Mobile-Safari/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 屏幕阅读器支持测试" classname="e2e/performance-accessibility.spec.js" time="1.443">
+<failure message="performance-accessibility.spec.js:191:3 屏幕阅读器支持测试" type="FAILURE">
+<![CDATA[  [Mobile Safari] › e2e/performance-accessibility.spec.js:191:3 › 性能和可访问性测试 › 屏幕阅读器支持测试 ────────────
+
+    Error: expect(received).toBeGreaterThan(expected)
+
+    Expected: > 0
+    Received:   0
+
+      204 |     
+      205 |     // 应该有适当的 ARIA 标签
+    > 206 |     expect(ariaLabels.length).toBeGreaterThan(0);
+          |                               ^
+      207 |     
+      208 |     // 检查语义化标签
+      209 |     const semanticElements = await page.$$eval('main, nav, header, footer, section, article', elements => 
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:206:31
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-屏幕阅读器支持测试-Mobile-Safari/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-屏幕阅读器支持测试-Mobile-Safari/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+<system-out>
+<![CDATA[ARIA 标签: []
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-屏幕阅读器支持测试-Mobile-Safari/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-屏幕阅读器支持测试-Mobile-Safari/video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 颜色对比度测试" classname="e2e/performance-accessibility.spec.js" time="10.554">
+<failure message="performance-accessibility.spec.js:221:3 颜色对比度测试" type="FAILURE">
+<![CDATA[  [Mobile Safari] › e2e/performance-accessibility.spec.js:221:3 › 性能和可访问性测试 › 颜色对比度测试 ──────────────
+
+    TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('h1:has-text("区块链扫雷")') to be visible
+
+
+       at page-objects/MainPage.js:64
+
+      62 |
+      63 |   async waitForPageLoad() {
+    > 64 |     await this.page.waitForSelector(this.selectors.title);
+         |                     ^
+      65 |     // 使用 domcontentloaded 而不是 networkidle 来避免无限循环问题
+      66 |     await this.page.waitForLoadState('domcontentloaded');
+      67 |     // 等待一小段时间确保页面稳定
+        at MainPage.waitForPageLoad (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:64:21)
+        at MainPage.goto (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:60:16)
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:222:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-颜色对比度测试-Mobile-Safari/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-颜色对比度测试-Mobile-Safari/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-performance-accessibility-性能和可访问性测试-颜色对比度测试-Mobile-Safari/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-颜色对比度测试-Mobile-Safari/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-颜色对比度测试-Mobile-Safari/video.webm]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-颜色对比度测试-Mobile-Safari/error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 移动设备可访问性测试" classname="e2e/performance-accessibility.spec.js" time="1.427">
+<system-out>
+<![CDATA[触摸目标尺寸: [
+  { width: [33m245[39m, height: [33m45[39m, area: [33m11025[39m },
+  { width: [33m245[39m, height: [33m45[39m, area: [33m11025[39m }
+]
+]]>
+</system-out>
+</testcase>
+<testcase name="性能和可访问性测试 › 网络条件性能测试" classname="e2e/performance-accessibility.spec.js" time="11.377">
+<failure message="performance-accessibility.spec.js:280:3 网络条件性能测试" type="FAILURE">
+<![CDATA[  [Mobile Safari] › e2e/performance-accessibility.spec.js:280:3 › 性能和可访问性测试 › 网络条件性能测试 ─────────────
+
+    TimeoutError: page.waitForSelector: Timeout 10000ms exceeded.
+    Call log:
+      - waiting for locator('h1:has-text("区块链扫雷")') to be visible
+        6 × waiting for" http://localhost:5174/" navigation to finish...
+          - navigated to "http://localhost:5174/"
+
+
+       at page-objects/MainPage.js:64
+
+      62 |
+      63 |   async waitForPageLoad() {
+    > 64 |     await this.page.waitForSelector(this.selectors.title);
+         |                     ^
+      65 |     // 使用 domcontentloaded 而不是 networkidle 来避免无限循环问题
+      66 |     await this.page.waitForLoadState('domcontentloaded');
+      67 |     // 等待一小段时间确保页面稳定
+        at MainPage.waitForPageLoad (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:64:21)
+        at MainPage.goto (/Users/feijie/Projects/扫雷游戏/frontend/tests/page-objects/MainPage.js:60:16)
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:288:7
+        at measurePerformance (/Users/feijie/Projects/扫雷游戏/frontend/tests/utils/test-helpers.js:157:3)
+        at /Users/feijie/Projects/扫雷游戏/frontend/tests/e2e/performance-accessibility.spec.js:287:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-网络条件性能测试-Mobile-Safari/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results/e2e-performance-accessibility-性能和可访问性测试-网络条件性能测试-Mobile-Safari/video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../test-results/e2e-performance-accessibility-性能和可访问性测试-网络条件性能测试-Mobile-Safari/error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-网络条件性能测试-Mobile-Safari/test-failed-1.png]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-网络条件性能测试-Mobile-Safari/video.webm]]
+
+[[ATTACHMENT|e2e-performance-accessibility-性能和可访问性测试-网络条件性能测试-Mobile-Safari/error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
