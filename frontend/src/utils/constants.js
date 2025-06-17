@@ -75,7 +75,17 @@ export const ANIMATION_DURATION = {
 export const STORAGE_KEYS = {
   GAME_SETTINGS: 'minesweeper_settings',
   PLAYER_STATS: 'minesweeper_stats',
-  HIGH_SCORES: 'minesweeper_high_scores'
+  HIGH_SCORES: 'minesweeper_high_scores',
+  CURRENT_GAME: 'minesweeper_current_game',
+  GAME_MODE: 'minesweeper_game_mode'
+};
+
+// 游戏状态枚举
+export const GameStatus = {
+  NOT_STARTED: 0,
+  IN_PROGRESS: 1,
+  WON: 2,
+  LOST: 3
 };
 
 // 网络配置

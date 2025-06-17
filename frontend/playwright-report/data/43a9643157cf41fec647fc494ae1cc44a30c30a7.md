@@ -1,0 +1,122 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - heading "区块链扫雷" [level=1]
+  - paragraph: 可爱温馨的链上游戏
+  - button "游戏"
+  - button "统计"
+  - button "🧪 测试"
+- main:
+  - heading "连接钱包" [level=3]
+  - paragraph: 连接您的 MetaMask 钱包开始游戏
+  - button "连接 MetaMask"
+  - paragraph: 请安装 MetaMask
+  - link "下载 MetaMask":
+    - /url: https://metamask.io/download/
+  - heading "🧪 游戏逻辑测试模式" [level=1]
+  - paragraph: 测试扫雷游戏的核心逻辑功能
+  - button "🌸 简单 (8×8, 10雷)"
+  - button "🌺 中等 (12×12, 21雷)"
+  - button "🌹 困难 (16×16, 51雷)"
+  - text: 10 地雷总数 9 已揭示 0s 游戏时间 0 得分 10 0 0 进行中
+  - button
+  - button
+  - button "1"
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button "1"
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button "1"
+  - button "1"
+  - button "2"
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - button
+  - paragraph: • 左键点击揭示格子
+  - paragraph: • 右键点击标记/取消标记地雷
+  - paragraph: • 数字表示周围地雷数量
+  - heading "🧪 测试功能说明" [level=3]
+  - list:
+    - listitem:
+      - text: •
+      - strong: 左键点击
+      - text: ：揭示格子
+    - listitem:
+      - text: •
+      - strong: 右键点击
+      - text: ：标记/取消标记地雷
+    - listitem:
+      - text: •
+      - strong: 自动展开
+      - text: ：点击空格子会自动展开相邻的空格子
+    - listitem:
+      - text: •
+      - strong: 游戏逻辑
+      - text: ：完全本地化，无需区块链连接
+    - listitem:
+      - text: •
+      - strong: 胜利条件
+      - text: ：揭示所有非地雷格子
+    - listitem:
+      - text: •
+      - strong: 失败条件
+      - text: ：点击到地雷
+- contentinfo:
+  - text: Made with love by The Augster
+  - link "GitHub":
+    - /url: https://github.com
+  - link "Etherscan":
+    - /url: https://sepolia.etherscan.io/
+```

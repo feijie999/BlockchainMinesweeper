@@ -11,24 +11,31 @@ import {
   Loader
 } from 'lucide-react';
 
-const GameBoard = ({ 
-  gameInfo, 
-  board, 
-  revealedCells, 
-  onCellClick, 
+const GameBoard = ({
+  gameInfo,
+  board,
+  revealedCells,
+  flaggedCells: propFlaggedCells,
+  onCellClick,
+  onCellRightClick,
   isLoading,
   isGameWon,
   isGameLost,
   isGameInProgress,
-  getGameDuration 
+  getGameDuration,
+  gameMode,
+  showFlags = false
 }) => {
-  const [flaggedCells, setFlaggedCells] = useState(new Set());
+  const [localFlaggedCells, setLocalFlaggedCells] = useState(new Set());
   const [animatingCells, setAnimatingCells] = useState(new Set());
+
+  // 使用传入的标记状态或本地状态
+  const flaggedCells = propFlaggedCells || localFlaggedCells;
 
   // 重置标记状态当游戏重新开始时
   useEffect(() => {
     if (!isGameInProgress && !isGameWon && !isGameLost) {
-      setFlaggedCells(new Set());
+      setLocalFlaggedCells(new Set());
       setAnimatingCells(new Set());
     }
   }, [isGameInProgress, isGameWon, isGameLost]);
@@ -60,23 +67,29 @@ const GameBoard = ({
   };
 
   // 处理右键点击（标记/取消标记）
-  const handleRightClick = (x, y, event) => {
+  const handleRightClick = async (x, y, event) => {
     event.preventDefault();
-    
-    if (!isGameInProgress || revealedCells.has(`${x}-${y}`)) {
+
+    if (!isGameInProgress || revealedCells.has(`${x}-${y}`) || !showFlags) {
       return;
     }
 
-    const cellKey = `${x}-${y}`;
-    setFlaggedCells(prev => {
-      const newSet = new Set(prev);
-      if (newSet.has(cellKey)) {
-        newSet.delete(cellKey);
-      } else {
-        newSet.add(cellKey);
-      }
-      return newSet;
-    });
+    // 如果有外部处理函数，使用它
+    if (onCellRightClick) {
+      await onCellRightClick(x, y);
+    } else {
+      // 否则使用本地状态
+      const cellKey = `${x}-${y}`;
+      setLocalFlaggedCells(prev => {
+        const newSet = new Set(prev);
+        if (newSet.has(cellKey)) {
+          newSet.delete(cellKey);
+        } else {
+          newSet.add(cellKey);
+        }
+        return newSet;
+      });
+    }
   };
 
   // 获取格子显示内容
@@ -308,8 +321,13 @@ const GameBoard = ({
       <div className="mt-4 p-3 bg-gray-50 rounded-2xl">
         <div className="text-xs text-gray-600 space-y-1">
           <p>• 左键点击揭示格子</p>
-          <p>• 右键点击标记/取消标记地雷</p>
+          {showFlags && <p>• 右键点击标记/取消标记地雷</p>}
           <p>• 数字表示周围地雷数量</p>
+          {gameMode && (
+            <p>• 当前模式: <span className="font-semibold">
+              {gameMode === 'local' ? '本地模式' : '区块链模式'}
+            </span></p>
+          )}
         </div>
       </div>
     </div>

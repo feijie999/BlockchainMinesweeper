@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Sparkles, Heart, Github, ExternalLink } from 'lucide-react';
 import WalletConnect from './components/WalletConnect';
+import GameModeSelector from './components/GameModeSelector';
 import GameSettings from './components/GameSettings';
 import GameBoard from './components/GameBoard';
 import PlayerStats from './components/PlayerStats';
@@ -15,9 +16,13 @@ function App() {
 
   // 使用游戏状态管理 Hook
   const {
+    currentMode,
+    isLocalMode,
+    isBlockchainMode,
     gameInfo,
     board,
     revealedCells,
+    flaggedCells,
     gameStarted,
     gameEnded,
     playerStats,
@@ -26,6 +31,7 @@ function App() {
     error,
     startNewGame,
     revealCell,
+    toggleFlag,
     fetchGameInfo,
     fetchPlayerStats,
     getGameDuration,
@@ -58,6 +64,22 @@ function App() {
   // 处理格子点击
   const handleCellClick = async (x, y) => {
     return await revealCell(x, y);
+  };
+
+  // 处理格子右键点击（标记）
+  const handleCellRightClick = async (x, y) => {
+    if (isLocalMode) {
+      return await toggleFlag(x, y);
+    }
+    return false;
+  };
+
+  // 处理模式切换
+  const handleModeChange = (newMode) => {
+    console.log('模式切换到:', newMode);
+    // 模式切换后重置连接状态
+    setIsConnected(false);
+    setCurrentAccount('');
   };
 
   return (
@@ -128,15 +150,21 @@ function App() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* 左侧边栏 */}
           <div className="lg:col-span-1 space-y-6">
-            {/* 钱包连接 */}
-            <WalletConnect onConnectionChange={handleConnectionChange} />
+            {/* 游戏模式选择 */}
+            <GameModeSelector onModeChange={handleModeChange} />
+
+            {/* 钱包连接 - 仅区块链模式显示 */}
+            {isBlockchainMode && (
+              <WalletConnect onConnectionChange={handleConnectionChange} />
+            )}
 
             {/* 游戏设置 */}
             {currentView === 'game' && (
               <GameSettings
                 onStartGame={handleStartGame}
-                isConnected={isConnected}
+                isConnected={isLocalMode || isConnected}
                 isGameActive={gameStarted && !gameEnded}
+                gameMode={currentMode}
               />
             )}
           </div>
@@ -148,12 +176,16 @@ function App() {
                 gameInfo={gameInfo}
                 board={board}
                 revealedCells={revealedCells}
+                flaggedCells={flaggedCells}
                 onCellClick={handleCellClick}
+                onCellRightClick={handleCellRightClick}
                 isLoading={isLoading}
                 isGameWon={isGameWon}
                 isGameLost={isGameLost}
                 isGameInProgress={isGameInProgress}
                 getGameDuration={getGameDuration}
+                gameMode={currentMode}
+                showFlags={isLocalMode}
               />
             ) : currentView === 'stats' ? (
               <PlayerStats
@@ -174,7 +206,7 @@ function App() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2 text-gray-600">
               <Heart className="w-4 h-4 text-pink-500" />
-              <span className="text-sm">Made with love by The Augster</span>
+              <span className="text-sm">Made with love by 青蛙会点头</span>
             </div>
 
             <div className="flex items-center gap-4">
