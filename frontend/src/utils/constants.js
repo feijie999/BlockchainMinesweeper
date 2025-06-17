@@ -80,14 +80,6 @@ export const STORAGE_KEYS = {
   GAME_MODE: 'minesweeper_game_mode'
 };
 
-// 游戏状态枚举
-export const GameStatus = {
-  NOT_STARTED: 0,
-  IN_PROGRESS: 1,
-  WON: 2,
-  LOST: 3
-};
-
 // 网络配置
 export const NETWORK_CONFIG = {
   SEPOLIA_CHAIN_ID: 11155111,

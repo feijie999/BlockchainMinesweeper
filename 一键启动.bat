@@ -32,17 +32,21 @@ echo [1] 🚀 启动游戏（推荐）
 echo [2] 🔧 检查环境
 echo [3] 📦 重新安装依赖
 echo [4] 🌐 启动区块链网络（高级用户）
-echo [5] ❓ 帮助说明
-echo [6] 🚪 退出
+echo [5] 🧪 运行测试
+echo [6] ❓ 帮助说明
+echo [7] 🚪 退出
 echo.
-set /p choice="请输入选项 (1-6): "
+set /p choice="请输入选项 (1-7): "
 
 if "%choice%"=="1" goto start_game
 if "%choice%"=="2" goto check_env
 if "%choice%"=="3" goto reinstall_deps
 if "%choice%"=="4" goto start_blockchain
-if "%choice%"=="5" goto show_help
-if "%choice%"=="6" goto exit_script
+if "%choice%"=="5" goto run_tests
+if "%choice%"=="6" goto show_help
+if "%choice%"=="7" goto exit_script
+echo ❌ 无效选项，请重新选择
+timeout /t 1 /nobreak >nul
 goto welcome
 
 :: 检查环境
@@ -255,6 +259,141 @@ echo 🛑 区块链网络已停止
 pause
 goto welcome
 
+:: 运行测试
+:run_tests
+cls
+echo.
+echo 🧪 运行项目测试...
+echo.
+
+call :check_basic_env
+if errorlevel 1 goto error_exit
+
+echo 请选择测试类型：
+echo.
+echo [1] 🎮 前端测试 (Playwright)
+echo [2] ⛓️  智能合约测试 (Hardhat)
+echo [3] 🔄 运行所有测试
+echo [4] 🔙 返回主菜单
+echo.
+set /p test_choice="请输入选项 (1-4): "
+
+if "%test_choice%"=="1" goto run_frontend_tests
+if "%test_choice%"=="2" goto run_contract_tests
+if "%test_choice%"=="3" goto run_all_tests
+if "%test_choice%"=="4" goto welcome
+echo ❌ 无效选项
+timeout /t 1 /nobreak >nul
+goto run_tests
+
+:: 运行前端测试
+:run_frontend_tests
+echo.
+echo 🎮 运行前端测试...
+
+cd "%FRONTEND_DIR%"
+
+:: 检查依赖
+if not exist "node_modules" (
+    echo 📦 安装前端依赖...
+    npm install
+    if errorlevel 1 (
+        echo ❌ 依赖安装失败
+        cd ..
+        goto error_exit
+    )
+)
+
+:: 安装 Playwright 浏览器
+echo 🌐 检查 Playwright 浏览器...
+npx playwright install --with-deps
+
+:: 运行测试
+echo 🧪 执行前端测试...
+npm run test
+
+if errorlevel 1 (
+    echo ❌ 前端测试失败
+) else (
+    echo ✅ 前端测试通过！
+)
+
+cd ..
+echo.
+pause
+goto run_tests
+
+:: 运行合约测试
+:run_contract_tests
+echo.
+echo ⛓️  运行智能合约测试...
+
+cd "%CONTRACTS_DIR%"
+
+:: 检查依赖
+if not exist "node_modules" (
+    echo 📦 安装合约依赖...
+    npm install
+    if errorlevel 1 (
+        echo ❌ 依赖安装失败
+        cd ..
+        goto error_exit
+    )
+)
+
+:: 编译合约
+echo 🔨 编译智能合约...
+npx hardhat compile
+
+if errorlevel 1 (
+    echo ❌ 合约编译失败
+    cd ..
+    goto error_exit
+)
+
+:: 运行测试
+echo 🧪 执行合约测试...
+npx hardhat test
+
+if errorlevel 1 (
+    echo ❌ 合约测试失败
+) else (
+    echo ✅ 合约测试通过！
+)
+
+cd ..
+echo.
+pause
+goto run_tests
+
+:: 运行所有测试
+:run_all_tests
+echo.
+echo 🔄 运行所有测试...
+echo.
+
+:: 运行合约测试
+echo [1/2] 智能合约测试
+cd "%CONTRACTS_DIR%"
+if not exist "node_modules" npm install --silent
+npx hardhat compile --quiet
+npx hardhat test
+cd ..
+
+echo.
+:: 运行前端测试
+echo [2/2] 前端测试
+cd "%FRONTEND_DIR%"
+if not exist "node_modules" npm install --silent
+npx playwright install --with-deps >nul 2>&1
+npm run test
+cd ..
+
+echo.
+echo 🎉 所有测试完成！
+pause
+goto run_tests
+
 :: 显示帮助
 :show_help
 cls
@@ -326,9 +465,31 @@ exit /b 0
 :: 错误退出
 :error_exit
 echo.
-echo ❌ 启动失败！请检查上述错误信息
+echo ❌ 操作失败！
 echo.
-pause
+
+:: 记录错误日志
+echo %date% %time%: 操作失败 >> error.log
+
+echo 💡 故障排除建议：
+echo    1. 检查网络连接
+echo    2. 确保 Node.js 版本 ^>= 16
+echo    3. 尝试重新安装依赖
+echo    4. 查看错误日志：error.log
+echo.
+
+echo 🔧 快速修复选项：
+echo [1] 🔄 重新安装依赖
+echo [2] 🔍 检查环境
+echo [3] 📋 返回主菜单
+echo [4] 🚪 退出程序
+echo.
+set /p fix_choice="请选择 (1-4): "
+
+if "%fix_choice%"=="1" goto reinstall_deps
+if "%fix_choice%"=="2" goto check_env
+if "%fix_choice%"=="3" goto welcome
+if "%fix_choice%"=="4" goto exit_script
 goto welcome
 
 :: 正常退出
